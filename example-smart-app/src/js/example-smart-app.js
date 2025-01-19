@@ -28,8 +28,8 @@
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
-          var fname = '';
-          var lname = '';
+          var fname = 'TestFirstName';
+          var lname = 'TestLastName';
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
