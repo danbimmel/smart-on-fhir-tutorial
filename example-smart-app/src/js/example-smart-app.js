@@ -28,8 +28,8 @@
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
-          var fname = 'TestFirstName';
-          var lname = 'TestLastName';
+          var fname = ' ';
+          var lname = ' ';
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
@@ -132,7 +132,7 @@
 
 
 // Our app is written in ES3 so that it works in older browsers!
-
+/*
 function createRenderer(id) {
   const output = id ? document.getElementById(id) : document.body;
   return function(data) {
@@ -184,3 +184,4 @@ App.prototype.setLabel = function(containerId, label) {
   document.getElementById(containerId).previousElementSibling.innerText = label;
 };
 
+*/
