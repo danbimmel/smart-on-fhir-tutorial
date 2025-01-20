@@ -108,6 +108,8 @@
           App.prototype.setLabel("output", "Conformance Statement");
           app.renderContext();
           app.request("metadata");
+                  drawVisualization(p);
+          
       }).catch(createRenderer("output"));
   
       extractData().then(

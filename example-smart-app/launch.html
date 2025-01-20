@@ -35,9 +35,9 @@
             scope: [
                 "launch",           // Get the launch context in EHR launch mode
                 "openid profile",  // Get the current user
+                "patient/Encounter.read", // Read Encounter data
                 "patient/Patient.read",   // Read patient data
-                "patient/Observation.read",
-                "launch/patient",
+                "patient/Observation.read",// Read obversation data
                 "online_access"
               ].join(" ")
         });
