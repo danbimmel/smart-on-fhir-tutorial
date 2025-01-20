@@ -103,16 +103,15 @@
     
     <script type="text/javascript">
       FHIR.oauth2.ready().then(function(client) {
+          drawVisualization(client);
           var app = new App(client);
           App.prototype.setLabel("output", "Conformance Statement");
           app.renderContext();
           app.request("metadata");
-      }).then(function(p) {
-        drawVisualization(p);
-      }).then(function(){
+      },function() {
           $('#loading').hide();
           $('#errors').html('<p> Failed to call FHIR Service </p>');
-      }).catch(createRenderer("output"));
+        }).catch(createRenderer("output"));
   
       // extractData().then(
       //   //Display Patient Demographics and Observations if extractData was success
@@ -122,7 +121,8 @@
 
       //   //Display 'Failed to call FHIR Service' if extractData failed
       //   function() {
-
+      //     $('#loading').hide();
+      //     $('#errors').html('<p> Failed to call FHIR Service </p>');
       //   }
       // );
       
