@@ -7,6 +7,7 @@
     <title>DanBimmel Example-SMART-App</title>
 
     <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
+    
     <!--
       Temporarily disable cerner-smart-embeddable-lib
       <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
@@ -101,15 +102,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <script>
-      FHIR.oauth2.ready(onReady,onError).then(function(client) {
-          var app = new App(client);
-          App.prototype.setLabel("output", "Conformance Statement");
-          app.renderContext();
-          app.request("metadata");
-        },function() {
-          $('#loading').hide();
-          $('#errors').html('<p> Failed to call FHIR Service </p>');
-        }).catch(createRenderer("output"));
+      // FHIR.oauth2.ready().then(function(client) {
+      //     var app = new App(client);
+      //     App.prototype.setLabel("output", "Conformance Statement");
+      //     app.renderContext();
+      //     app.request("metadata");
+      //   },function() {
+      //     $('#loading').hide();
+      //     $('#errors').html('<p> Failed to call FHIR Service </p>');
+      //   }).catch(createRenderer("output"));
       
       // extractData().then(
       //   //Display Patient Demographics and Observations if extractData was success
@@ -123,7 +124,12 @@
       //     $('#errors').html('<p> Failed to call FHIR Service </p>');
       //   }
       // );
-      
+      extractData().then(function(client) {
+        var app = new App(client);
+        App.prototype.setLabel("output", "Conformance Statement");
+        app.renderContext();
+        app.request("metadata");
+        }).catch(createRenderer("output"));
     </script>
   </body>
 </html>
