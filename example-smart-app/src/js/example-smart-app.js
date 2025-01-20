@@ -1,7 +1,6 @@
 (function(window){
   window.extractData = function() {
     var ret = $.Deferred();
-
     function onError() {
       console.log('Loading error', arguments);
       ret.reject();
@@ -10,7 +9,9 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
+        console.log(patient);
         var pt = patient.read();
+        console.log(pt);
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -48,6 +49,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
+          console.log(p.fname);
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
