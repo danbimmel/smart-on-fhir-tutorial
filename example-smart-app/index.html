@@ -95,35 +95,36 @@
     <script src='./src/js/example-smart-app.js'></script>
 
     <!-- FHIR Client JS Library -->
-    <!--script src='./lib/js/fhir-client-v0.1.12.js'></script-->
     <script src='https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js'></script>
-    <!--script src='./node_modules/fhirclient/build/fhir-client.js'></script-->
     <!-- Prevent session bleed caused by single threaded embedded browser and sessionStorage API -->
     <!-- https://github.com/cerner/fhir-client-cerner-additions -->
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
     <script type="text/javascript">
       FHIR.oauth2.ready().then(function(client) {
           var app = new App(client);
           App.prototype.setLabel("output", "Conformance Statement");
           app.renderContext();
           app.request("metadata");
-                  drawVisualization(p);
-          
-      }).catch(createRenderer("output"));
-  
-      extractData().then(
-        //Display Patient Demographics and Observations if extractData was success
-        function(p) {
-          drawVisualization(p);
-        },
-
-        //Display 'Failed to call FHIR Service' if extractData failed
-        function() {
+      }).then(function(p) {
+        drawVisualization(p);
+      }).then(function(){
           $('#loading').hide();
           $('#errors').html('<p> Failed to call FHIR Service </p>');
-        }
-      );
+      }).catch(createRenderer("output"));
+  
+      // extractData().then(
+      //   //Display Patient Demographics and Observations if extractData was success
+      //   function(p) {
+      //     drawVisualization(p);
+      //   },
+
+      //   //Display 'Failed to call FHIR Service' if extractData failed
+      //   function() {
+
+      //   }
+      // );
       
     </script>
   </body>
