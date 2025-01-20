@@ -108,7 +108,8 @@
           App.prototype.setLabel("output", "Conformance Statement");
           app.renderContext();
           app.request("metadata");
-      },function() {
+        }, function(p) {drawVisualization(p);
+        },function() {
           $('#loading').hide();
           $('#errors').html('<p> Failed to call FHIR Service </p>');
         }).catch(createRenderer("output"));
