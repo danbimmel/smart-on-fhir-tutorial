@@ -1,5 +1,5 @@
-(function(window){
-  window.extractData = function() {
+// (function(window){
+//   window.extractData = function() {
     var ret = $.Deferred();
     function onError() {
       console.log('Loading error', arguments);
@@ -69,10 +69,10 @@
       }
     }
 
-    FHIR.oauth2.ready(onReady, onError);
-    return ret.promise();
+  //   FHIR.oauth2.ready(onReady, onError);
+  //   return ret.promise();
 
-  };
+  // };
 
   function defaultPatient(){
     return {
@@ -130,7 +130,7 @@
     $('#hdl').html(p.hdl);
   };
 
-})(window);
+//})(window);
 
 
 // Our app is written in ES3 so that it works in older browsers!

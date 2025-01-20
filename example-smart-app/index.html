@@ -21,9 +21,9 @@
       <div class="bounce3"></div>
     </div>
     <div id='holder' >
-      <h2>Example-SMART-App</h2>
+      <h2>Daniel's-SMART-App</h2>
 
-      <!--h2>Patient Resource</h2>
+      <h2>Patient Resource</h2>
       <table>
         <tr>
           <th>First Name:</th>
@@ -42,7 +42,7 @@
           <td id='birthdate'></td>
         </tr>
       </table>
-      <h2>Observation Resource</h2>
+      <!--h2>Observation Resource</h2>
       <table>
         <tr>
           <th>Height:</th>
@@ -65,10 +65,7 @@
           <th>HDL:</th>
           <td id='hdl'></td>
         </tr>
-      </table>
-    </div-->
-
-    <!--div id='errors'-->
+      </table-->
     </div>
     <div class="cell top-left">
       <h4>Current Patient</h4>
@@ -104,7 +101,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <script>
-      FHIR.oauth2.ready().then(function(client) {
+      FHIR.oauth2.ready(onReady,onError).then(function(client) {
           var app = new App(client);
           App.prototype.setLabel("output", "Conformance Statement");
           app.renderContext();
