@@ -134,7 +134,7 @@
 
 
 // Our app is written in ES3 so that it works in older browsers!
-/*
+ 
 function createRenderer(id) {
   const output = id ? document.getElementById(id) : document.body;
   return function(data) {
@@ -186,4 +186,4 @@ App.prototype.setLabel = function(containerId, label) {
   document.getElementById(containerId).previousElementSibling.innerText = label;
 };
 
-*/
+ 

@@ -23,7 +23,7 @@
     <div id='holder' >
       <h2>Example-SMART-App</h2>
 
-      <h2>Patient Resource</h2>
+      <!--h2>Patient Resource</h2>
       <table>
         <tr>
           <th>First Name:</th>
@@ -66,9 +66,9 @@
           <td id='hdl'></td>
         </tr>
       </table>
-    </div>
+    </div-->
 
-    <!--div id='errors'>
+    <!--div id='errors'-->
     </div>
     <div class="cell top-left">
       <h4>Current Patient</h4>
@@ -104,30 +104,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <script>
-      // FHIR.oauth2.ready().then(function(client) {
-      //     var app = new App(client);
-      //     App.prototype.setLabel("output", "Conformance Statement");
-      //     app.renderContext();
-      //     app.request("metadata");
-      //   },function(p) {
-      //     drawVisualization(p);
-      //   },function() {
-      //     $('#loading').hide();
-      //     $('#errors').html('<p> Failed to call FHIR Service </p>');
-      //   }).catch(createRenderer("output"));
-      
-      extractData().then(
-        //Display Patient Demographics and Observations if extractData was success
-        function(p) {
-          drawVisualization(p);
-        },
-
-        //Display 'Failed to call FHIR Service' if extractData failed
-        function() {
+      FHIR.oauth2.ready().then(function(client) {
+          var app = new App(client);
+          App.prototype.setLabel("output", "Conformance Statement");
+          app.renderContext();
+          app.request("metadata");
+        },function() {
           $('#loading').hide();
           $('#errors').html('<p> Failed to call FHIR Service </p>');
-        }
-      );
+        }).catch(createRenderer("output"));
+      
+      // extractData().then(
+      //   //Display Patient Demographics and Observations if extractData was success
+      //   function(p) {
+      //     drawVisualization(p);
+      //   },
+
+      //   //Display 'Failed to call FHIR Service' if extractData failed
+      //   function() {
+      //     $('#loading').hide();
+      //     $('#errors').html('<p> Failed to call FHIR Service </p>');
+      //   }
+      // );
       
     </script>
   </body>
