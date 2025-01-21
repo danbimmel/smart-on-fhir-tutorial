@@ -114,6 +114,7 @@
         // Render the current patient (or any error)
         client.patient.read().then(
           function(pt) {
+            console.log(pt);
             var ptJSON = JSON.parse(pt);
             console.log(ptJSON);
             console.log(ptJSON.id);
