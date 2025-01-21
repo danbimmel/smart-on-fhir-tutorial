@@ -115,10 +115,8 @@
         client.patient.read().then(
           function(pt) {
             console.log(pt);
-            var ptJSON = JSON.parse(pt);
-            console.log(ptJSON);
-            console.log(ptJSON.id);
-            document.getElementById("pid").innerText = JSON.stringify(ptJSON.id);//JSON.stringify(pt, null, 4);
+            console.log(patient.id)
+            document.getElementById("pid").innerText = patient.id
           },
           function(error) {
             document.getElementById("pid").innerText = error.stack;
