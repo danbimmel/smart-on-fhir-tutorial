@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create a JSON string from a JavaScript object.</h2>
+<p id="demo"></p>
+<script src="./src/tinytester.js"></script>
+
+<script>
+const obj = JSONVAR;
+//console.log(JSONVAR);
+var json = JSON.parse(JSONVAR);
+console.log("json.state.clientId: ",json.state.clientId);
+document.getElementById("demo").innerHTML = json.state.clientId;
+const myJSON = JSON.stringify(json);
+
+</script>
+
+</body>
+</html>

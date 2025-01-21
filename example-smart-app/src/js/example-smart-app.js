@@ -145,6 +145,8 @@ function createRenderer(id) {
 function App(client) {
   this.client = client;
   console.log(this.client);
+  var json = JSON.parse(client);
+  console.log("json.state.clientId: ",json.state.clientId);
 }
 
 App.prototype.fetchCurrentPatient = function() {
