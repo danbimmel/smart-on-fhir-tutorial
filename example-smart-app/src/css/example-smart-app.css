@@ -110,34 +110,24 @@ pre {
 .top-left {
   top: 0;
   left: 0;
-  width: 33.3333%;
+  width: 25%;
 }
-
-.top-center {
+.top-left2 {
   top: 0;
-  left: 33.3333%;
-  width: 33.3333%;
+  left: 25%;
+  width: 25%;;
 }
-
+.top-right2 {
+  top: 0;
+  left: 50%;
+  width: 25%;
+}
 .top-right {
   top: 0;
-  right: 0;
-  width: 33.3333%;
+  right: 0%;
+  width: 25%;
 }
-.left {
-  left: 0;
-  width: 33.3333%;
-}
-
-.center {
-  left: 33.3333%;
-  width: 33.3333%;
-}
-
-.right {
-  right: 0;
-  width: 33.3333%;
-}
+ 
 .bottom {
   top: 40%;
   right: 0;
