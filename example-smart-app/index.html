@@ -131,6 +131,7 @@
         app.renderContext();
         app.request("metadata");
         $('#loading').hide();
+        $('#holder').show();
       }).then(console.log)
       .catch(createRenderer("output"));
       
