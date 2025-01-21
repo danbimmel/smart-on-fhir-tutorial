@@ -144,6 +144,7 @@ function createRenderer(id) {
 
 function App(client) {
   this.client = client;
+  console.log(this.client);
 }
 
 App.prototype.fetchCurrentPatient = function() {
