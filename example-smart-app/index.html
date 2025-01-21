@@ -102,6 +102,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <script>
+      FHIR.oauth2.settings.replaceBrowserHistory = false;
+      FHIR.oauth2.settings.fullSessionStorageSupport = true;
+      FHIR.oauth2.settings.refreshTokenWithCredentials = "same-origin";
       FHIR.oauth2.ready().then(function(client) {
           var app = new App(client);
           App.prototype.setLabel("output", "Conformance Statement");
