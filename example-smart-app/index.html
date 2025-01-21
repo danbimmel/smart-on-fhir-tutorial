@@ -110,7 +110,8 @@
           App.prototype.setLabel("output", "Conformance Statement");
           app.renderContext();
           app.request("metadata");
-        }).catch(createRenderer("output"));
+      }).then(extractData()
+         ).catch(createRenderer("output"));
       
       // extractData().then(
       //   //Display Patient Demographics and Observations if extractData was success
