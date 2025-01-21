@@ -86,9 +86,9 @@ pre {
 }
 
 .cell {
-  position: absolute;
+  position: static;
   padding: 10px;
-  height: 40%;
+  /*height: 40%;*/
   min-height: 100px;
 }
 
@@ -101,7 +101,7 @@ pre {
 }
 
 .cell > h4 {
-  position: absolute;
+  position: static;
   top: 10px;
   line-height: 1;
   margin: 0;
@@ -124,7 +124,20 @@ pre {
   right: 0;
   width: 33.3333%;
 }
+.left {
+  left: 0;
+  width: 33.3333%;
+}
 
+.center {
+  left: 33.3333%;
+  width: 33.3333%;
+}
+
+.right {
+  right: 0;
+  width: 33.3333%;
+}
 .bottom {
   top: 40%;
   right: 0;
