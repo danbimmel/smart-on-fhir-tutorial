@@ -29,6 +29,8 @@
       //var TempURL = ;
       var url = new URL(location.href);
       console.log(url);
+      var TestURL = "https://danbimmel.github.io/smart-on-fhir-tutorial/example-smart-app/?iss=abc123&fhirServiceURL='testabc.com'"
+      var url = new URL(TestURL);
       FHIR.oauth2.settings.replaceBrowserHistory = false;
       FHIR.oauth2.settings.fullSessionStorageSupport = true;
       FHIR.oauth2.settings.refreshTokenWithCredentials = "same-origin";
