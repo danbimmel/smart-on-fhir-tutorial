@@ -110,12 +110,9 @@
           App.prototype.setLabel("output", "Conformance Statement");
           app.renderContext();
           app.request("metadata");
-      }).catch(createRenderer("output"){
-        function() {
           $('#loading').hide();
           $('#errors').html('<p> Failed to call FHIR Service </p>');
-        }
-      });
+      }).catch(createRenderer("output"));
       
       // extractData().then(
       //   //Display Patient Demographics and Observations if extractData was success
