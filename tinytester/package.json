@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "browserify": "^17.0.1",
     "debug": "^4.4.0",
     "ms": "^2.1.3"
   }
