@@ -145,7 +145,8 @@ function createRenderer(id) {
 function App(client) {
   this.client = client;
   console.log(this.client);
-  var ClientJSON = JSON.parse(this.client);
+  var tempJSON = this.client
+  var ClientJSON = JSON.parse(tempJSON);
   console.log("ClientJSON.state.clientId: ",ClientJSON.state.clientId);
 }
 
