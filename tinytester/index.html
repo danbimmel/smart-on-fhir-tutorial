@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <link href="./src/css/console.css" rel="stylesheet" >
+ 
+    <script language="JavaScript" type="text/JavaScript" src="./src/js/console.js"></script>
+    <script language="JavaScript" type="text/JavaScript" src="./src/js/mp_log.js"></script>
+    <!--script src="./src/tinytester.js"></script>
+    <script src='./src/js/debugger.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        const obj = JSONVAR;
+        //console.log(JSONVAR);
+        var json = JSON.parse(JSONVAR);
+        console.log("json.state.clientId: ",json.state.clientId);
+        document.getElementById("demo").innerHTML = json.state.clientId;
+        const myJSON = JSON.stringify(json);
+    </script-->    
+    
+    <body onload="main()">
+        <div id="mainWrapper">
+            <div class="controls">
+                <button id="reload" type="button">Reload</button>
+                <button id="test" onclick="mp_log('Test Button pressed')" type="button">Test Action</button>
+              </div>
+              
+            <div id="demo">Click me</div>
+        </div>
+        <div id="logWrapper" class="event-log">
+            <div id="logSection"></div>
+            <div>
+                <label for="eventLog">Event log:</label>
+                <textarea
+                    readonly
+                    class="event-log-contents"
+                    rows="8"
+                    cols="30"
+                    id="eventLog"></textarea>
+            </div>
+            
+        </div>
+        <div id=mp_log>
+		    <input type="button" value="Show console" onclick="load_console();">
+            <input id=copylog type="button" value="Copy logtext">
+            <br>
+            <div id=mp_log_text></div>
+        </div>
 
-<h2>Create a JSON string from a JavaScript object.</h2>
-<p id="demo"></p>
-<script src="./src/tinytester.js"></script>
-<script src='./src/js/debugger.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<script>
-const obj = JSONVAR;
-//console.log(JSONVAR);
-var json = JSON.parse(JSONVAR);
-console.log("json.state.clientId: ",json.state.clientId);
-document.getElementById("demo").innerHTML = json.state.clientId;
-const myJSON = JSON.stringify(json);
-
-</script>
-
-</body>
+		<!--div id=fr_mill_gxp_button_bar style="display: block; overflow: hidden; border: 1px gray;\
+		background-color:yellow;float:right;">\
+		<span id=btn-launch-form class="gpx-Button">+</span><br>^,
+		evaluate($show_log_window, 1, "<button onclick='OpenInIE();'>Open in IE</button><button onclick='run_test_2();'>Test2</button>",
+		""),
+		;002 : Add version button and version text span
+		^<span class="gpx-Button"  style="float:right" onmouseenter="displayVersion()" onmouseout="hideVersion()">?</span>\
+<span id=version_number style="float:right;display:none;z-index:3;position:relative">#Version Number#</span>\
+		</div-->
+    </body>
 </html>

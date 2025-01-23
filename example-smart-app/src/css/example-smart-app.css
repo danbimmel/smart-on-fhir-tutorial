@@ -86,7 +86,7 @@ pre {
 }
 
 .cell {
-  position: static;
+  position: absolute;
   padding: 10px;
   /*height: 40%;*/
   min-height: 100px;
@@ -101,7 +101,7 @@ pre {
 }
 
 .cell > h4 {
-  position: static;
+  position: absolute;
   top: 10px;
   line-height: 1;
   margin: 0;
